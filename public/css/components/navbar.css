@@ -1,0 +1,76 @@
+/* General Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+nav ul {
+    margin-top: 15px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-logo img {
+    width: 120px;
+    height: auto;
+    margin-left: 10px;
+}
+.nav-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-actions a {
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid white;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-actions a:hover {
+    background-color: white;
+    color: black;
+}
+
+.nav-actions .register-btn {
+    background-color: #ffd700;
+    color: black;
+}
+
+.nav-actions .register-btn:hover {
+    background-color: white;
+}
+
+nav ul li a.active {
+    color: black;
+    border-radius: 26px;
+    background-color: #ffd700;
+    padding: 8px 18px;
+    font-weight: bold;
+}

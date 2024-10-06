@@ -1,0 +1,20 @@
+footer {
+    background-color: #f1c40f; /* Warna latar belakang kuning */
+    color: black; /* Warna teks hitam */
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 0 10px; /* Margin bawah untuk jarak */
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons i {
+    margin: 0 10px; /* Jarak antar ikon */
+    width: 24px; /* Ukuran ikon */
+    height: 24px; /* Ukuran ikon */
+}
