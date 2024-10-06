@@ -29,6 +29,12 @@
             <div class="left-icons">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
+            @if (Auth::check())
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">Logout</button>
+                </form>
+            @endif
         @endguest
     </div>
 </nav>
