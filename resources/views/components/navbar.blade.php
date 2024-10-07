@@ -27,7 +27,7 @@
             <a href="/register" class="register-btn">Daftar</a>
         @else
             <div class="left-icons">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-cart-shopping" href = "/history"></i>
             </div>
             @if (Auth::check())
                 <form action="{{ route('logout') }}" method="POST">

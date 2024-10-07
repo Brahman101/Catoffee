@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.register-container {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.register-form {
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-info {
+    background-color: #ffc107;
+    color: black;
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: large;
+}
+
+.register-forms {
+    width: 100%;
+}
+
+.register-forms form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.user-box,
+.pass-box {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+button[type="submit"] {
+    width: 80%;
+    background-color: #ffc107;
+    border-radius: 6px;
+    color: black;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #e0a800;
+}
+
+.register-container a {
+    color: #ffc107;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 1rem;
+}
