@@ -17,12 +17,10 @@
         <div class="register-form d-flex justify-content-center align-items-center flex-column">
             <h2>Register</h2>
             @if ($errors->any())
-                <div>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                <div class="validation-error">
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach
                 </div>
             @endif
 
@@ -31,16 +29,19 @@
                     @csrf
                     <div class="user-box -flex justify-content-center align-items-center flex-column">
                         <label>Username</label>
-                        <input type="text" name="username" required>
+                        <input type="text" name="username">
+
                     </div>
                     <div class="pass-box -flex justify-content-center align-items-center flex-column">
                         <label>Password</label>
-                        <input type="password" name="password" required>
+                        <input type="password" name="password">
+
                     </div>
                     <button type="submit"
                         class="d-flex justify-content-center align-items-center flex-column">Register</button>
                 </form>
             </div>
+
 
             <p>Already have an account? <a href="{{ route('login') }}">Login here</a></p>
         </div>

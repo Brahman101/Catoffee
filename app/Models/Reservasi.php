@@ -11,4 +11,22 @@ class Reservasi extends Model
 
     protected $table = 'reservasi';
     protected $fillable = ['menu', 'room', 'user_id'];
+
+    public function setMenuAttribute($value)
+    {
+        $this->attributes['menu'] = !empty($value) ? $value : null;
+    }
+
+    public function getMenuAttribute($value)
+    {
+        return $value ?? 'No menu specified';
+    }
+
+    public function scopeWithValidMenu($query)
+    {
+        return $query->where(function ($q) {
+            $q->whereNull('menu')
+                ->orWhereRaw('LENGTH(menu) - LENGTH(REPLACE(menu, " ", "")) BETWEEN 1 AND 9');
+        });
+    }
 }

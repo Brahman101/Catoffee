@@ -8,17 +8,24 @@
             @method('PUT')
             <div class="form-group">
                 <label for="menu">Menu</label>
-                <input type="text" class="form-control" id="menu" name="menu" value="{{ $reservation->menu }}"
-                    required>
+                <input type="text" class="form-control" id="menu" name="menu"
+                    value="{{ old('menu', $reservation->menu) }}">
+                @error('menu')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="room">Room</label>
                 <select class="form-control" id="room" name="room" required>
                     @foreach ($rooms as $room)
-                        <option value="{{ $room }}" {{ $reservation->room == $room ? 'selected' : '' }}>
+                        <option value="{{ $room }}"
+                            {{ old('room', $reservation->room) == $room ? 'selected' : '' }}>
                             {{ $room }}</option>
                     @endforeach
                 </select>
+                @error('room')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Update Reservation</button>
         </form>

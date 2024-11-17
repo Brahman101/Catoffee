@@ -32,7 +32,17 @@ class ReservasiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'menu' => 'required',
+            'menu' => ['nullable', 'string', function ($attribute, $value, $fail) {
+                if (!empty($value)) {
+                    $wordCount = str_word_count($value, 0, '0123456789');
+                    if ($wordCount < 2) {
+                        $fail('If filled, the menu must be at least 2 words or include a number and a word.');
+                    }
+                    if ($wordCount > 10) {
+                        $fail('The menu must not exceed 10 words.');
+                    }
+                }
+            }],
             'room' => 'required',
         ]);
 
@@ -66,6 +76,21 @@ class ReservasiController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'menu' => ['nullable', 'string', function ($attribute, $value, $fail) {
+                if (!empty($value)) {
+                    $wordCount = str_word_count($value, 0, '0123456789');
+                    if ($wordCount < 2) {
+                        $fail('If filled, the menu must be at least 2 words or include a number and a word.');
+                    }
+                    if ($wordCount > 10) {
+                        $fail('The menu must not exceed 10 words.');
+                    }
+                }
+            }],
+            'room' => 'required|string',
+        ]);
+
         $reservation = Reservasi::findOrFail($id);
         $reservation->update($request->all());
         return redirect()->route('history')->with('success', 'Reservation updated successfully.');
